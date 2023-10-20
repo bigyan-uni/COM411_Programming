@@ -65,3 +65,21 @@ def climb_ladder(steps_remaining, steps_crossed):
 #  calling function with more arguments
 climb_ladder(5, 2)
 climb_ladder(2, 5)
+
+
+#  function to display ladder
+def display_ladder(steps):
+    print("| |\n***\n| |")
+    print("***\n| |\n" * (steps - 1))
+
+
+#  function to create ladder
+def create_ladder():
+    steps = input("How many steps remain?")
+    display_ladder(int(steps))
+
+
+#  calling create_ladder to test both functions
+create_ladder()
+
+
