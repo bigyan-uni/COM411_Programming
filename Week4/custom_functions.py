@@ -83,3 +83,25 @@ def create_ladder():
 create_ladder()
 
 
+# character in the adventure is trying to distribute their weight so they can reach the top of the bridge ladder quicker
+
+def sum_weights(weight, inventory_weight):
+    return int(weight) + int(inventory_weight)
+
+
+def calc_avg_weight(weight, inventory_weight):
+    return sum_weights(weight, inventory_weight) / 2
+
+
+def run():
+    user_weight = input('What is the weight of the person?')
+    user_inventory_weight = input('What is the weight of their inventory?')
+    decision = input("What would you like to calculate (sum or average)?")
+    if decision == 'sum':
+        print(sum_weights(user_weight, user_inventory_weight))
+    elif decision == 'average':
+        print(calc_avg_weight(user_weight, user_inventory_weight))
+
+
+#  calling above function
+run()
