@@ -52,3 +52,16 @@ def cross_bridge(steps):
 #  calling function with example arguments
 cross_bridge(3)
 cross_bridge(6)
+
+
+#  creating a function to help player climb the collapsed bridge, which is now conveniently a ladder
+def climb_ladder(steps_remaining, steps_crossed):
+    if steps_remaining > steps_crossed:
+        print("Still some way to go!")
+    else:
+        print("We are almost there!")
+
+
+#  calling function with more arguments
+climb_ladder(5, 2)
+climb_ladder(2, 5)
