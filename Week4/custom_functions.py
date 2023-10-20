@@ -105,3 +105,68 @@ def run():
 
 #  calling above function
 run()
+
+
+#  The character has now found a map, we wish to create functions that manipulate cryptic words#
+def choose_option():
+    print("1) Display in a Box")
+    print("2) Display Lower-case")
+    print("3) Display Upper-case")
+    print("4) Display Mirrored")
+    print("5) Repeat")
+    option = input("Which type of decryption would you like use?")
+    phrase = input("Enter cryptic word: ")
+    if option == '1':
+        box_display(phrase)
+    if option == '2':
+        lower_display(phrase)
+    if option == '3':
+        upper_display(phrase)
+    if option == '4':
+        mirror_display(phrase)
+    if option == '5':
+        repeat_display(phrase)
+
+
+#  display the word in an ASCII art box
+def box_display(phrase):
+    print('~' * (len(phrase) + 2))
+    print("~" + phrase + "~")
+    print('~' * (len(phrase) + 2))
+
+
+#  display the word in lower-case e.g. hello
+def lower_display(phrase):
+    print(phrase.lower())
+
+
+#  display the word in upper-case e.g. HELLO
+def upper_display(phrase):
+    print(phrase.upper())
+
+
+#  display the word with its mirrored word e.g. Hello | olleH
+def mirror_display(phrase):
+    r_phrase = ""
+    for i in phrase:
+        r_phrase = i + r_phrase
+    phrase = phrase + " | " + r_phrase
+    print(phrase)
+
+
+# ask the user how many times to display the word and then display the word that many times alternating between
+# upper-case and lower-case
+def repeat_display(phrase):
+    repeat_num = int(input('How many times do you want to display the word?'))
+    is_upper = True
+    for i in range(repeat_num):
+        if is_upper is True:
+            print(phrase.upper())
+            is_upper = False
+        else:
+            print(phrase.lower())
+            is_upper = True
+
+
+#  calling choose option
+choose_option()
