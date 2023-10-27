@@ -45,12 +45,10 @@ def run_task3():
     step_likelihood = steps()
     for i in range(len(step_likelihood)):
         tup = step_likelihood[i]
-        for j in range(len(step_likelihood[i])):
-            if j == 1:
-                if tup[j] >= 50:
-                    bad_steps.append(tup[0])
-                else:
-                    good_steps.append(tup[0])
+        if tup[1] >= 50:
+            bad_steps.append(tup[0])
+        else:
+            good_steps.append(tup[0])
     good = len(good_steps)
     bad = len(bad_steps)
     print(f"Good steps: {good}, Bad steps: {bad}")
