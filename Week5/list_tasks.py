@@ -26,3 +26,19 @@ def run_task2():
 
 
 run_task2()
+
+#  variation to demonstrate how to iterate a list.
+
+
+def menu():
+    print("Please select a direction:")
+    movement_list = directions()
+    for i in range(len(movement_list)):
+        print(f"{i}: {movement_list[i]}")
+
+
+def run_task3():
+    menu()
+
+
+run_task3()
