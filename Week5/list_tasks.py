@@ -9,3 +9,20 @@ def run_task1():
 
 if __name__ == "__main__":
     run_task1()
+
+#  variation to demonstrate how to index a list.
+
+
+def movements():
+    path = ["Move Forward", 10, "Move Backward", 5, "Move Left", 3, "Move Right", 1]
+    return path
+
+
+def run_task2():
+    print("Moving...")
+    movement_list = movements()
+    for i in range(0, len(movement_list), 2):
+        print(f"{movement_list[i]} for {movement_list[i+1]} steps")
+
+
+run_task2()
