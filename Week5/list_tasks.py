@@ -42,3 +42,24 @@ def run_task3():
 
 
 run_task3()
+
+#  final variation to demonstrate how to populate a list.
+
+
+def menu_and_input():
+    print("Please select a direction:")
+    menu()
+    movement_list = directions()
+    index = int(input())
+    return movement_list[index]
+
+
+def run_task4():
+    route = []
+    print("Working out escape route...")
+    for i in range(5):
+        route.append(menu_and_input())
+    print(f"Escape route: {route}")
+
+
+run_task4()
