@@ -16,4 +16,34 @@ def run():
     print("Processing...")
     cwd()
 
-run()
+
+def display_chars(file_path, num_char):
+    with open(file_path) as file:
+        char_to_read = file.read(num_char)
+        print(f'The first {num_char} characters are:')
+        print(char_to_read)
+
+
+def display_line(file_path):
+    with open(file_path) as file:
+        first_line = file.readline()
+        print()
+        print('The first line is:')
+        print(first_line)
+
+
+def display_text(file_path):
+    with open(file_path)as file:
+        file_data = file.read()
+        print('The full text is:')
+        print(file_data)
+
+
+def run_task2():
+    display_chars('library.txt', 5)
+    display_line('library.txt')
+    display_text('library.txt')
+
+
+if __name__ == '__main__':
+    run_task2()
