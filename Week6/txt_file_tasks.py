@@ -62,3 +62,33 @@ def runtask3():
 
 
 runtask3()
+
+
+def search_books(file_path):
+    print("Searching...", end="")
+    sections = ""
+    books = "Books:\n"
+    with open(file_path) as file:
+        for line in file:
+            if "Section" in line:
+                sections = sections + line
+            else:
+                books = books + line
+    print("Done!")
+    data_line = sections + "\n\n" + books
+    return data_line
+
+
+def save(file_path, data):
+    print("Saving...", end="")
+    with open(file_path, "w") as file:
+        file.write(data)
+    print("Done!")
+
+
+def run_task4():
+    data = search_books("books.txt")
+    save("section-books.txt", data)
+
+
+run_task4()
