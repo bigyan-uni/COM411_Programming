@@ -37,3 +37,23 @@ def run_task2():
 
 
 run_task2()
+
+
+#  Task 3
+def export(file_path, export_num):
+    print("Exporting...")
+    for i in range(export_num):
+        with open(file_path, "a") as file:
+            item_id = input("Enter the id of the item: ")
+            item_name = input("Enter the name of the item: ")
+            item_colour = input("Enter the colour of the item: ")
+            export_line = f"\n{item_id},{item_name},{item_colour}"
+            file.write(export_line)
+    print("Done!")
+
+
+def run_task3():
+    export("exported_items.csv", 2)
+
+
+run_task3()
