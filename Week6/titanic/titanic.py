@@ -27,6 +27,8 @@ def run():
         display_num_survived()
     elif selected_option == 3:
         display_passengers_per_gender()
+    elif selected_option == 4:
+        display_passengers_per_age_group()
     else:
         print("Error! Option not recognised!")
 
@@ -73,6 +75,26 @@ def display_passengers_per_gender():
         elif gender == "female":
             females += 1
     print(f"Females: {females}, Males: {males}")
+
+
+#  function to display the number of passengers per age group
+def display_passengers_per_age_group():
+    children = 0
+    adults = 0
+    elderly = 0
+    for record in records:
+        age = record[5]
+        #  some age values are empty
+        if age != "":
+            #  some age values have decimal point; hence, floats are used instead if ints
+            age = float(age)
+            if age < 18:
+                children += 1
+            elif age < 65:
+                adults += 1
+            else:
+                elderly += 1
+    print(f"Children: {children}, Adults: {adults}, Elderly: {elderly}")
 
 
 run()
