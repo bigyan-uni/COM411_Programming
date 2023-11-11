@@ -25,6 +25,8 @@ def run():
         display_passenger_names()
     elif selected_option == 2:
         display_num_survived()
+    elif selected_option == 3:
+        display_passengers_per_gender()
     else:
         print("Error! Option not recognised!")
 
@@ -58,6 +60,19 @@ def display_num_survived():
         if survived_status == 1:
             num_survived += 1
     print(f"{num_survived} passengers survived.")
+
+
+# function to display the number of passengers per gender
+def display_passengers_per_gender():
+    females = 0
+    males = 0
+    for record in records:
+        gender = record[4]
+        if gender == "male":
+            males += 1
+        elif gender == "female":
+            females += 1
+    print(f"Females: {females}, Males: {males}")
 
 
 run()
